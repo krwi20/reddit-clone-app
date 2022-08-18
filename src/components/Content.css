@@ -1,0 +1,9 @@
+.content { 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #DBDBDB;
+    height: 1000px;
+    margin-left: 10%;
+    padding: 20px 30px;
+}

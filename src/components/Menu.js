@@ -4,9 +4,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getSubreddits } from "../store/subredditSlice";
 
-import "./Home.css";
+import "./Menu.css";
 
-function Home() {
+function Menu() {
   const dispatch = useDispatch();
   const subreddits = useSelector((state) => state.subreddits.subreddits);
 
@@ -17,17 +17,15 @@ function Home() {
   console.log(subreddits);
 
   return (
-    <div>
+    <div className="subreddits__container">
       {subreddits.map((subreddit) => (
-        <div className="subreddits__container">
-          <article key={subreddit.id}>
-            <h1>{subreddit.title}</h1>
-            <img src={subreddit.icon_img} />
-          </article>
+        <div className="test" key={subreddit.id}>
+          <h1 className="subreddits__title">{subreddit.title}</h1>
+          <img className="subreddits__image" src={subreddit.icon_img} />
         </div>
       ))}
     </div>
   );
 }
 
-export default Home;
+export default Menu;
