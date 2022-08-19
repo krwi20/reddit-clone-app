@@ -28,3 +28,31 @@
     height: 20px;
     flex-grow: 1;
 }
+
+@media only screen and (max-width: 600px) {
+    .header {
+        height: 21px;
+    }
+
+    .header__logo {
+        margin-left: 3px;
+    }
+
+    .header__logo img {
+        height: 10px;
+        width: 10px;
+        padding: 0 6px;
+    }
+
+    .header__logo p {
+        font-size: 8px;
+    }
+
+    .header__searchbar {
+        margin: 0 6px;
+    }
+
+    .header__searchbar input {
+        height: 6px;
+    }
+}
