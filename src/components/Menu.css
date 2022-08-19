@@ -33,7 +33,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-
     .test {
         flex-direction: column;
         /* flex-wrap: wrap; */

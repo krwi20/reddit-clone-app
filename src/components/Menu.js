@@ -17,7 +17,7 @@ function Menu() {
   console.log(subreddits);
 
   return (
-    <div className="subreddits__container">
+    <div id="testing" className="subreddits__container">
       {subreddits.map((subreddit) => (
         <div className="test" key={subreddit.id}>
           <img className="subreddits__image" src={subreddit.icon_img} />

@@ -27,6 +27,11 @@
 .header__searchbar input {
     height: 20px;
     flex-grow: 1;
+    overflow: visibile;
+}
+
+.header__menu {
+    display: none;
 }
 
 @media only screen and (max-width: 600px) {
@@ -54,5 +59,10 @@
 
     .header__searchbar input {
         height: 16px;
+    }
+
+    .header__menu {
+        display: flex;
+        margin-right: 12px;
     }
 }
