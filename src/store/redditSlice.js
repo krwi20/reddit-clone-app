@@ -14,7 +14,7 @@ export const redditSlice = createSlice({
   initialState: {
     posts: [],
     isLoading: false,
-    chosenSubreddit: "/r/pics",
+    chosenSubreddit: "/r/cat",
   },
   extraReducers: {
     [getRedditPosts.pending]: (state) => {
