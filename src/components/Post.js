@@ -5,8 +5,8 @@ function Post(props) {
 
   return (
     <div>
-      <h1>s</h1>
-      <h1>{subreddit.id}</h1>
+      <h1>{subreddit.title}</h1>
+      <img src={subreddit.url} />
     </div>
   );
 }
