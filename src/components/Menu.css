@@ -38,6 +38,10 @@
         /* flex-wrap: wrap; */
     }
 
+    .subreddits__container, .test:active {
+        display: none;
+    }
+
     .subreddits__image {
         height: 46px;
         width: 46px;

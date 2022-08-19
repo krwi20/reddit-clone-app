@@ -16,8 +16,23 @@ function Menu() {
 
   console.log(subreddits);
 
+  function myFunction() {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      var x = document.getElementById("testing");
+      if (x.style.display === "none") {
+        x.style.display = "flex";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  }
+
   return (
-    <div id="testing" className="subreddits__container">
+    <div id="testing" className="subreddits__container" onClick={myFunction}>
       {subreddits.map((subreddit) => (
         <div className="test" key={subreddit.id}>
           <img className="subreddits__image" src={subreddit.icon_img} />
