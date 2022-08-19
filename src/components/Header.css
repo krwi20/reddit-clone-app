@@ -31,7 +31,7 @@
 
 @media only screen and (max-width: 600px) {
     .header {
-        height: 21px;
+        height: 60px;
     }
 
     .header__logo {
@@ -39,13 +39,13 @@
     }
 
     .header__logo img {
-        height: 10px;
-        width: 10px;
+        height: 20px;
+        width: 20px;
         padding: 0 6px;
     }
 
     .header__logo p {
-        font-size: 8px;
+        font-size: 12px;
     }
 
     .header__searchbar {
@@ -53,6 +53,6 @@
     }
 
     .header__searchbar input {
-        height: 6px;
+        height: 16px;
     }
 }
