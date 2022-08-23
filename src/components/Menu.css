@@ -5,6 +5,7 @@
     flex-direction: column;
     width: 30%;
     float: right;
+    margin-left: 50px;
 }
 
 .test {
@@ -16,7 +17,7 @@
 }
 
 .test:hover {
-    background: #f13dd6;
+    background: lightgrey;
 }
 
 .subreddits__title {
