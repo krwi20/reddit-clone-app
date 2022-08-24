@@ -15,7 +15,6 @@ function Content() {
   }, [dispatch]);
 
   console.log(posts);
-  console.log(posts.comments);
 
   function toggleComments(a) {
     var comments = document.getElementById(a);
