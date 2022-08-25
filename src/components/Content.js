@@ -14,8 +14,6 @@ function Content() {
     dispatch(getRedditPosts(reddit));
   }, [dispatch]);
 
-  console.log(posts);
-
   function toggleComments(a) {
     var comments = document.getElementById(a);
 
@@ -34,10 +32,10 @@ function Content() {
             <div className="content__details">
               <h1>{reddit.title}</h1>
                 <div className="content__image__container">
-                {/* If the url does not include a jpg - if the post isnt an image - use a reddit logo as a placeholder */}
-                {/* If image is clicked takes you to the actual reddit post */}
-                {(reddit.url).includes("jpg")  ? <a href={`https://www.reddit.com${reddit.permalink}`} target="_blank"><img className="content__image" 
-                src={reddit.url} /></a> : <a href={`https://www.reddit.com${reddit.permalink}`} target="_blank"><img className="content__image" src="http://t1.gstatic.com/images?q=tbn:ANd9GcThsotATP9ktYH_-oqNK6lYSI2USCxC-9nhbqScnKqvWFyxmL64"/></a>}
+                {reddit.is_video && <video className="content__image" src={reddit.media.reddit_video.fallback_url} controls />}
+                {reddit.is_self && <p>{reddit.selftext}</p>}
+                {reddit.is_gallery && <img className="content__image" src={reddit.thumbnail} />}
+                {!reddit.is_video && !reddit.is_self && !reddit.is_gallery && <img className="content__image" src={reddit.url} />}
                 </div>
                 <div className="content__info">
                   <p>Author: u/{reddit.author}</p>
@@ -46,8 +44,8 @@ function Content() {
                   <p onClick={() => toggleComments(reddit.id)}>Comments</p>
                 </div>
                 <div className="content__comment__container">
-                  <div id={reddit.id} style={{display: "none"}}>
-                    <p>{reddit.title}</p>
+                  <div id={reddit.id} style={{display: "none"}} >
+                    <p>temp</p>
                   </div>
                 </div>
             </div>

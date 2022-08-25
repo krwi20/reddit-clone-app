@@ -24,6 +24,7 @@ export const redditSlice = createSlice({
     posts: [],
     isLoading: false,
     chosenSubreddit: "/r/cat",
+    comments: [],
   },
   extraReducers: {
     // INITIAL REDDIT POSTS

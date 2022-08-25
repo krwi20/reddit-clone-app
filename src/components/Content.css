@@ -43,7 +43,26 @@
 .content__comment__container {
     display: flex;
     flex-direction: column;
-    background-color: red;
+}
+
+.content__comments {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.woop {
+    display: flex;
+    flex-direction: column;
+}
+
+.boop {
+    display: flex;
+    flex-direction: row;
+}
+
+.boop__author {
+    color: blue;
 }
 
 @media only screen and (max-width: 600px) {
