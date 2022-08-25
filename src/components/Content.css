@@ -42,26 +42,25 @@
 
 .content__comment__container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .content__comments {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.woop {
-    display: flex;
-    flex-direction: column;
-}
-
-.boop {
-    display: flex;
     flex-direction: row;
+    width: 100%;
+    border: 1px solid grey;
+    margin: 8px 0;
+    align-items: center;
 }
 
-.boop__author {
+.content__comments p {
+    padding: 8px;
+}
+
+.content__author {
     color: blue;
 }
 

@@ -2,20 +2,24 @@ import React from "react";
 import "./Content.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getRedditPosts } from "../store/redditSlice";
+import { getRedditComments, getRedditPosts } from "../store/redditSlice";
 import moment from 'moment';
 
 function Content() {
   const dispatch = useDispatch();
   const reddit = useSelector((state) => state.reddits.chosenSubreddit);
   const posts = useSelector((state) => state.reddits.posts);
+  const comment = useSelector((state) => state.reddits.comments);
 
   useEffect(() => {
     dispatch(getRedditPosts(reddit));
   }, [dispatch]);
 
-  function toggleComments(a) {
-    var comments = document.getElementById(a);
+  function toggleComments(redditId, redditPermalink) {
+
+    dispatch(getRedditComments(redditPermalink));
+
+    var comments = document.getElementById(redditId);
 
     if(comments.style.display === "none") {
       comments.style.display = "flex";
@@ -41,12 +45,15 @@ function Content() {
                   <p>Author: u/{reddit.author}</p>
                   {/* https://momentjs.com/docs/#/use-it/ */}
                   <p>{moment.unix(reddit.created_utc).fromNow()}</p>
-                  <p onClick={() => toggleComments(reddit.id)}>Comments</p>
+                  <p onClick={() => toggleComments(reddit.id, reddit.permalink)}>Comments</p>
                 </div>
-                <div className="content__comment__container">
-                  <div id={reddit.id} style={{display: "none"}} >
-                    <p>temp</p>
-                  </div>
+                <div id={reddit.id} style={{display: "none"}} className="content__comment__container">
+                  {comment.map((comment) => (
+                    <div className="content__comments">
+                        <p className="content__author">{comment.author} : </p>
+                        <p>{comment.body}</p>
+                      </div>
+                    ))}
                 </div>
             </div>
           </div>

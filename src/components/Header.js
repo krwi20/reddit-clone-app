@@ -7,7 +7,7 @@ function Header() {
 
   const dispatch = useDispatch();
 
-  function myFunction() {
+  function viewMenu() {
     var x = document.getElementById("testing");
     if (x.style.display === "none") {
       x.style.display = "flex";
@@ -34,7 +34,7 @@ function Header() {
         <input onChange={searchFunction}></input>
       </div>
       <div className="header__menu">
-        <button onClick={myFunction}>M</button>
+        <button onClick={viewMenu}>M</button>
       </div>
     </div>
   );

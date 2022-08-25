@@ -18,6 +18,15 @@ export const searchRedditPosts = createAsyncThunk(
   }
 );
 
+export const getRedditComments = createAsyncThunk(
+  "redditPosts/getRedditComments", 
+  async (reddit) => {
+    const response = await fetch(`https://www.reddit.com/${reddit}.json`);
+    const json = await response.json();
+    return json[1].data.children.map((comment) => comment.data);
+  }
+);
+
 export const redditSlice = createSlice({
   name: "reddit",
   initialState: {
@@ -47,6 +56,17 @@ export const redditSlice = createSlice({
       state.isLoading = false;
     },
     [searchRedditPosts.rejected]: (state) => {
+      state.isLoading = false;
+    },
+    // GET REDDIT COMMENTS
+    [getRedditComments.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getRedditComments.fulfilled]: (state, action) => {
+      state.comments = action.payload;
+      state.isLoading = false;
+    },
+    [getRedditComments.rejected]: (state) => {
       state.isLoading = false;
     },
   },

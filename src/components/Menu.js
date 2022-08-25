@@ -15,15 +15,13 @@ function Menu() {
     dispatch(getSubreddits());
   }, [dispatch]);
 
-  console.log(subreddits);
-
-  function myFunction() {
+  function viewMenu() {
     if (
       /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       )
     ) {
-      var x = document.getElementById("testing");
+      var x = document.getElementById("menu");
       if (x.style.display === "none") {
         x.style.display = "flex";
       } else {
@@ -32,13 +30,12 @@ function Menu() {
     }
   }
 
-  //remove white space from title and update contents
-  function consoleFunc(a) {
-    dispatch(searchRedditPosts(a.url));
+  function consoleFunc(subredditName) {
+    dispatch(searchRedditPosts(subredditName.url));
   }
 
   return (
-    <div id="testing" className="subreddits__container" onClick={myFunction}>
+    <div id="menu" className="subreddits__container" onClick={viewMenu}>
       {subreddits.map((subreddit) => (
         <div className="test" key={subreddit.id} onClick={() => consoleFunc(subreddit)}>
           {subreddit.icon_img === "" ? <img className="subreddits__image" 
