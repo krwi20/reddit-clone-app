@@ -25,3 +25,11 @@ This application is a Reddit viewer built using React and Redux. It allows users
 ## Project Management
 
 The project was managed using Git commits. Regular commits were made throughout the project to track changes and progress. 
+
+## Technologies and Tools Used
+* HTML
+* CSS
+* JavaScript
+* React
+* Redux
+* Git and GitHub
